@@ -7,7 +7,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloGit", "HelloGit\HelloG
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AA1_1", "AA1_1\AA1_1.vcxproj", "{0F464998-2C30-4F7A-83BC-2A84B2799B99}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S1_STL_vector", "S1_STL_vector\S1_STL_vector.vcxproj", "{981E8CFF-944B-4FED-B9E1-800D99EAFABE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S1_S2_STL_vector", "S1_STL_vector\S1_STL_vector.vcxproj", "{981E8CFF-944B-4FED-B9E1-800D99EAFABE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S2_STL_vector_exercise", "S2_STL_vector_exercise\S2_STL_vector_exercise.vcxproj", "{BC496629-8879-4208-BD4D-04A402C35157}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{981E8CFF-944B-4FED-B9E1-800D99EAFABE}.Release|x64.Build.0 = Release|x64
 		{981E8CFF-944B-4FED-B9E1-800D99EAFABE}.Release|x86.ActiveCfg = Release|Win32
 		{981E8CFF-944B-4FED-B9E1-800D99EAFABE}.Release|x86.Build.0 = Release|Win32
+		{BC496629-8879-4208-BD4D-04A402C35157}.Debug|x64.ActiveCfg = Debug|x64
+		{BC496629-8879-4208-BD4D-04A402C35157}.Debug|x64.Build.0 = Debug|x64
+		{BC496629-8879-4208-BD4D-04A402C35157}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC496629-8879-4208-BD4D-04A402C35157}.Debug|x86.Build.0 = Debug|Win32
+		{BC496629-8879-4208-BD4D-04A402C35157}.Release|x64.ActiveCfg = Release|x64
+		{BC496629-8879-4208-BD4D-04A402C35157}.Release|x64.Build.0 = Release|x64
+		{BC496629-8879-4208-BD4D-04A402C35157}.Release|x86.ActiveCfg = Release|Win32
+		{BC496629-8879-4208-BD4D-04A402C35157}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
