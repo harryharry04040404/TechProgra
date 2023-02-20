@@ -1,4 +1,5 @@
 #include "header.h"
+#include <iostream>
 
 int main() {
 	std::vector<int> v1(5, 1);
@@ -16,4 +17,11 @@ int main() {
 	v6.push_back(Person{"A", "01/01/1001", "11111111A"});
 	v6.push_back(Person{"B", "02/02/2002", "22222222B"});
 	v6.push_back(Person{"C", "03/03/3003", "33333333C"});
+
+	ShiftRight(v1, 0);
+
+	for (int i = 0; i < 6; i++) {
+
+		std::cout << v1[i] << std::endl;
+	}
 }
