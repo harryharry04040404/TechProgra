@@ -49,11 +49,11 @@ std::vector<int> ShiftRight(std::vector<int>& v1, int newItem) {
 
 	return v1;
 }
-
+/*
 std::vector<int> RotateLeft(std::vector<int>& v1) {
 
 	
-	v1.push_back(copy);
+	//v1.push_back(copy);
 	v1.erase(v1.begin());
 }
 
@@ -66,3 +66,4 @@ std::vector<bool> IsPalindrome(std::vector<char> v1) {
 
 
 }
+*/

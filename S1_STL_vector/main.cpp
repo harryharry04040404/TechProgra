@@ -11,8 +11,7 @@ int main() {
 	std::vector<int> third = {4, 100};							// two ints 4 & 100
 	std::vector<int> fourth (third);							// a copy of third
 }
-*/
-/* 
+
 int main() {
 	std::vector<int> v1 = { 3, 7, 2 };
 
@@ -20,13 +19,13 @@ int main() {
 	v1[1] = 10; // v1 = { 3, 10, 2 };
 	*(v1.begin() + 1) = 20; // *(arr + 1) = 20; v1 = { 3, 20, 2 };
 }
-*/
+
 
 //S2
 
 //Iterator ranged for
 
-/*
+
 int main() {
 	std::vector<int> myvector;
 			
@@ -38,11 +37,10 @@ int main() {
 		std::cout << myvector[j] << " - " << std::endl;
 	}
 }
-*/
 
 //Iterator based for
 
-/*
+
 int main() {
 	std::vector<int> myvector;
 	

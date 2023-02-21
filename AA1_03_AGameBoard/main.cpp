@@ -2,5 +2,5 @@
 
 int main() {
 
-	Fibonacci(60);
+
 }
