@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S3_review", "S3_\S3_.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AA1_03_AGameBoard", "AA1_03_AGameBoard\AA1_03_AGameBoard.vcxproj", "{CEBCFDA5-4DE2-4B93-9D56-813FCF8FB130}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S4_Sort", "S4_Sort\S4_Sort.vcxproj", "{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{CEBCFDA5-4DE2-4B93-9D56-813FCF8FB130}.Release|x64.Build.0 = Release|x64
 		{CEBCFDA5-4DE2-4B93-9D56-813FCF8FB130}.Release|x86.ActiveCfg = Release|Win32
 		{CEBCFDA5-4DE2-4B93-9D56-813FCF8FB130}.Release|x86.Build.0 = Release|Win32
+		{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}.Debug|x64.ActiveCfg = Debug|x64
+		{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}.Debug|x64.Build.0 = Debug|x64
+		{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}.Debug|x86.ActiveCfg = Debug|Win32
+		{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}.Debug|x86.Build.0 = Debug|Win32
+		{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}.Release|x64.ActiveCfg = Release|x64
+		{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}.Release|x64.Build.0 = Release|x64
+		{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}.Release|x86.ActiveCfg = Release|Win32
+		{8B968D41-C2DA-4E1C-BC78-A0AC2B68DE45}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
