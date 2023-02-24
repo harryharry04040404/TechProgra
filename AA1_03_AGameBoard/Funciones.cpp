@@ -27,18 +27,23 @@ void InitializeBoard(Board& board) {
 	board.player.y = RandomBetween(0, (NUM_ROWS-1) * (NUM_COLUMNS-1));
 }
 
-bool CheckMovement(Player player, Movement movementType) {
+bool CheckMovement(Player& player, Movement movementType) 
+{
 
-	if ((player.x != 0) && (player.x != (NUM_ROWS-1)) && (player.y != 0) && (player.y != (NUM_COLUMNS-1))) {
+	if ((player.x != 0) && (player.x != (NUM_ROWS-1)) && (player.y != 0) && (player.y != (NUM_COLUMNS-1)))
+	{
 
 		return true;
 	}
-	else {
+	else
+	{
 
-		switch (movementType) {
+		switch (movementType) 
+		{
 
 		case UP:
-			if (player.x != 0) {
+			if (player.x != 0) 
+			{
 
 				return true;
 			}
@@ -49,7 +54,8 @@ bool CheckMovement(Player player, Movement movementType) {
 			break;
 
 		case DOWN:
-			if (player.x != NUM_ROWS-1) {
+			if (player.x != NUM_ROWS-1) 
+			{
 
 				return true;
 			}
@@ -60,22 +66,26 @@ bool CheckMovement(Player player, Movement movementType) {
 			break;
 
 		case LEFT:
-			if (player.y != 0) {
+			if (player.y != 0)
+			{
 
 				return true;
 			}
-			else {
+			else 
+			{
 
 				return false;
 			}
 			break;
 
 		case RIGHT:
-			if (player.y != NUM_COLUMNS-1) {
+			if (player.y != NUM_COLUMNS-1)
+			{
 
 				return true;
 			}
-			else {
+			else
+			{
 
 				return false;
 			}
@@ -86,11 +96,11 @@ bool CheckMovement(Player player, Movement movementType) {
 
 void AddScore(Movement movementType, Player& player, Board board) {
 
-	bool coin;
+	
 
-	coin = ExistsCoin(movementType, player, board);
+	 ExistsCoin(movementType, player, board);
 
-	if (coin == true) {
+	if (ExistsCoin) {
 
 		player.score += 1;
 	}
@@ -99,9 +109,11 @@ void AddScore(Movement movementType, Player& player, Board board) {
 void SetPos(Player& player, Movement movementType) {
 
 
-	if (CheckMovement) {
+	if (CheckMovement(player.x,player.y)) 
+	{
 
-		switch (movementType) {
+		switch (movementType) 
+		{
 
 		case UP:
 
@@ -124,9 +136,9 @@ void SetPos(Player& player, Movement movementType) {
 			break;
 		}
 	}
-	else {
-
-		std::cout << "error input movement type" << std::endl;
+	else
+	{
+			std::cout << "error input movement type" << std::endl;
 	}
 }
 
@@ -137,8 +149,8 @@ bool ExistsCoin(Movement movementType, Player player, Board board) {
 	case UP:
 
 		if ((player.x + 1 == board.coins.x) && (player.y == board.coins.y)) {
-
-			return true, board.coins.numberOfCoins -= 1;
+			board.coins.numberOfCoins -= 1;
+			return true;
 		}
 		else {
 
@@ -149,8 +161,8 @@ bool ExistsCoin(Movement movementType, Player player, Board board) {
 	case DOWN:
 
 		if ((player.x - 1 == board.coins.x) && (player.y == board.coins.y)) {
-
-			return true, board.coins.numberOfCoins -= 1;
+			board.coins.numberOfCoins -= 1;
+			return true;
 		}
 		else {
 
@@ -161,8 +173,8 @@ bool ExistsCoin(Movement movementType, Player player, Board board) {
 	case LEFT:
 
 		if ((player.y - 1 == board.coins.y) && (player.x == board.coins.x)) {
-
-			return true, board.coins.numberOfCoins -= 1;
+			board.coins.numberOfCoins -= 1;
+			return true;
 		}
 		else {
 
@@ -173,8 +185,8 @@ bool ExistsCoin(Movement movementType, Player player, Board board) {
 	case RIGHT:
 
 		if ((player.y + 1 == board.coins.y) && (player.x == board.coins.x)) {
-
-			return true, board.coins.numberOfCoins -= 1;
+			 board.coins.numberOfCoins -= 1;
+			 return true;
 		}
 		else {
 
@@ -184,17 +196,34 @@ bool ExistsCoin(Movement movementType, Player player, Board board) {
 	}
 }
 
-void MovePlayer() {
-
-
+void MovePlayer()
+{
+	
 }
 
-bool GameOver() {
-
-
+bool GameOver(Board& board) 
+{
+	if (board.numberOfCoins == 0)
+		return true;
+	else
+		return false;
 }
 
-void PrintBoard() {
+void PrintBoard(Board posicion[][NUM_COLUMNS], int filas, int columnas)
+{
+	for (int i = 0; i<columnas; i++)
+	{
+		for (int j = 0; j < filas; j++)
+		{
+			if (posicion[i][j].Position.coins)
+				std::cout << 'C  ';
+			else if (posicion[i][j].Position.stone)
+				std::cout << 'S  ';
+			else 
+				std::cout << '0  ';
 
-
+		}
+		std::cout << std::endl;
+	}
+		
 }
