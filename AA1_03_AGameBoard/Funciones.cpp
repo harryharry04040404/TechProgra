@@ -103,10 +103,6 @@ bool CheckMovement(Player& player, Movement movementType)
 
 void AddScore(Movement movementType, Player& player, Board board) {
 
-	
-
-	 ExistsCoin(movementType, player, board);
-
 	if (ExistsCoin) {
 
 		player.score += 1;
