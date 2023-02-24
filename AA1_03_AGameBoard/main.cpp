@@ -2,10 +2,20 @@
 
 int main() {
 
-	Board tablero [NUM_ROWS][NUM_COLUMNS];
+	Board board [NUM_ROWS][NUM_COLUMNS];
+	Player myPlayer;
 
-	InitializeBoard(tablero);
+	InitializeBoard(board);
 
-	PrintBoard(tablero, NUM_ROWS, NUM_COLUMNS);
+	while (GameOver(board) != true) 
+	{
+		PrintBoard(board);
+
+		CheckMovement(myPlayer);
+		SetPos(myPlayer, CheckMovement());
+	}
+		
+	ExistsCoin;
+	MovePlayer();
 }
 
