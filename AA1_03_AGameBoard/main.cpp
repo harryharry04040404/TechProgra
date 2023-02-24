@@ -2,9 +2,10 @@
 
 int main() {
 
-
-	Board tablero;
+	Board tablero [NUM_ROWS][NUM_COLUMNS];
 
 	InitializeBoard(tablero);
+
+	PrintBoard(tablero, NUM_ROWS, NUM_COLUMNS);
 }
 
