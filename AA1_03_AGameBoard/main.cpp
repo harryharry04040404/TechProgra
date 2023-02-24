@@ -1,21 +1,32 @@
 #include "header.h"
-
+#include <stdlib.h>
 int main() {
-
-	Board board [NUM_ROWS][NUM_COLUMNS];
+    srand(time(NULL));
+	int piedras = 0;
+	int monedas = 0;
+	
 	Player myPlayer;
-
-	InitializeBoard(board);
-
-	while (GameOver(board) != true) 
+	Position posicion[NUM_ROWS][NUM_COLUMNS];
+	for (int i = 0; i < NUM_COLUMNS; i++)
 	{
-		PrintBoard(board);
+		for (int j = 0; j < NUM_ROWS; j++)
+		{
+			posicion[i][j].hasCoin = false;
+			posicion[i][j].hasStone = false;
 
-		CheckMovement(myPlayer);
-		SetPos(myPlayer, CheckMovement());
+		}
 	}
-		
-	ExistsCoin;
-	MovePlayer();
+
+	InitializeBoard(piedras,monedas, myPlayer,posicion);
+	
+	while (!GameOver(posicion)) 
+	{
+		PrintBoard(posicion,myPlayer);
+		MovePlayer();
+		ExistsCoin;
+		MovePlayer();
+	}
 }
+		
+	
 

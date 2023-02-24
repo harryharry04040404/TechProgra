@@ -7,35 +7,28 @@ enum Movement {	UP, DOWN, LEFT, RIGHT};
 
 struct Player
 {
-	Position position;
+	int x;
+	int y;
 	int score;
 };
+	
 
 struct Position
 {
-	int x;
-	int y;
 	bool hasCoin;
 	bool hasStone;
 };
 
-struct Board
-{
-	int stone;
-	int coin;
-	Player player;
-	Position position;
 
-}; 
 
 //Random
 int RandomBetween(int min, int max);
 
-void InitializeBoard(Board board [][NUM_COLUMNS]);
-bool CheckMovement(Player& player, Movement movementType);
-void AddScore(Movement movementType, Player& player, Board board, Position& position);
-void SetPos(Player& player, Movement movementType);
-bool ExistsCoin(Position& position);
-void MovePlayer(Player& player, Movement movementType);
-bool GameOver(Board board[][NUM_COLUMNS]);
-void PrintBoard(Board posicion[][NUM_COLUMNS]);
+void InitializeBoard(int& piedras, int& monedas, Player& jugador, Position posicion[][NUM_COLUMNS]);
+bool CheckMovement(Player& player, Movement movementType, Position posicion[][NUM_COLUMNS]);
+void AddScore(Movement movementType, Player& player, Position position[][NUM_COLUMNS]);
+void SetPos(Player& player, Movement movementType, Position posicion[][NUM_COLUMNS]);
+bool ExistsCoin(Player jugador, Position posicion[][NUM_COLUMNS], Movement movementType);
+Movement MovePlayer();
+bool GameOver(Position posicion[NUM_ROWS][NUM_COLUMNS]);
+void PrintBoard(Position posicion[][NUM_COLUMNS], Player jugador);

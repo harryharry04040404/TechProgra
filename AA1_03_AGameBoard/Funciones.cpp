@@ -10,34 +10,51 @@ int RandomBetween(int min, int max) {
 	return result;
 }
 
-void InitializeBoard(Board board[][NUM_COLUMNS]) {
+void InitializeBoard(int& piedras, int& monedas, Player& jugador, Position posicion[][NUM_COLUMNS]) {
 
-	board[NUM_ROWS][NUM_COLUMNS].stone = RandomBetween(0, 0.2 * NUM_ROWS * NUM_COLUMNS);
+	piedras = RandomBetween(0, (int)(0.2 * NUM_ROWS * NUM_COLUMNS));
 
-	int numberOfStones = board[NUM_ROWS][NUM_COLUMNS].stone;
+	monedas = RandomBetween(1, (int)(0.3 * NUM_ROWS * NUM_COLUMNS));
 
-	board[NUM_ROWS][NUM_COLUMNS].coin = RandomBetween(0, 0.3 * NUM_ROWS * NUM_COLUMNS);
+	
+		for(int j = 0; j<piedras;j++)
+		{
+			int x = RandomBetween(0, NUM_ROWS - 1);
+			int y = RandomBetween(0, NUM_COLUMNS);
+			
+			if (posicion[x][y].hasStone == true)
+				j--;
+			else
+				posicion[x][y].hasStone = true;
+		}
 
-	int numberOfCoins = board[NUM_ROWS][NUM_COLUMNS].coin;
+		for (int j = 0; j < monedas; j++)
+		{
+			int x = RandomBetween(0, NUM_ROWS - 1);
+			int y = RandomBetween(0, NUM_COLUMNS);
 
-	board[NUM_ROWS][NUM_COLUMNS].player.position.x = RandomBetween(0, (NUM_ROWS - 1) * (NUM_COLUMNS - 1));
+			if (posicion[x][y].hasCoin == true|| posicion[x][y].hasStone == true)
+				j--;
+			else
+				posicion[x][y].hasCoin = true;
+		}
 
-	board[NUM_ROWS][NUM_COLUMNS].player.position.y = RandomBetween(0, (NUM_ROWS - 1) * (NUM_COLUMNS - 1));
+
+		do {
+			jugador.x = RandomBetween(0, (NUM_ROWS - 1) * (NUM_COLUMNS - 1));
+			jugador.y = RandomBetween(0, (NUM_ROWS - 1) * (NUM_COLUMNS - 1));
+		}	 while (posicion[jugador.x][jugador.y].hasCoin || posicion[jugador.x][jugador.y].hasStone);
+		
 }
 
-bool CheckMovement(Player& player, Movement movementType) 
+bool CheckMovement(Player& player, Movement movementType, Position posicion[][NUM_COLUMNS])
 {
-	if ((player.position.x != 0) && (player.position.x != (NUM_ROWS-1)) && (player.position.y != 0) && (player.position.y != (NUM_COLUMNS-1)))
-	{
-		return true;
-	}
-	else
-	{
+	
 		switch (movementType) 
 		{
 
 		case UP:
-			if (player.position.x != 0) 
+			if (player.x != 0 || !posicion[player.x-1][player.y].hasStone)
 			{
 				return true;
 			}
@@ -48,7 +65,7 @@ bool CheckMovement(Player& player, Movement movementType)
 			break;
 
 		case DOWN:
-			if (player.position.x != NUM_ROWS-1) 
+			if (player.x != NUM_ROWS-1 || !posicion[player.x + 1][player.y].hasStone)
 			{
 				return true;
 			}
@@ -59,7 +76,7 @@ bool CheckMovement(Player& player, Movement movementType)
 			break;
 
 		case LEFT:
-			if (player.position.y != 0)
+			if (player.y != 0 || !posicion[player.x][player.y-1].hasStone)
 			{
 				return true;
 			}
@@ -70,7 +87,7 @@ bool CheckMovement(Player& player, Movement movementType)
 			break;
 
 		case RIGHT:
-			if (player.position.y != NUM_COLUMNS-1)
+			if (player.y != NUM_COLUMNS-1 || !posicion[player.x][player.y+1].hasStone)
 			{
 				return true;
 			}
@@ -81,20 +98,22 @@ bool CheckMovement(Player& player, Movement movementType)
 			break;
 		}
 	}
-}
 
-void AddScore(Movement movementType, Player& player, Board board, Position& position) {
 
-	if (ExistsCoin(position)) {
+void AddScore(Movement movementType, Player& player, Position position[][NUM_COLUMNS])
+{
 
+	if (ExistsCoin(player, position, movementType))
+	{
 		player.score += 1;
+		position [player.x][player.y].hasCoin = false;
 	}
 }
 
-void SetPos(Player& player, Movement movementType) {
+void SetPos(Player& player, Movement movementType, Position posicion[][NUM_COLUMNS]) {
 
 
-	if (CheckMovement(player, movementType)) 
+	if (CheckMovement(player, movementType, posicion)) 
 	{
 
 		switch (movementType) 
@@ -102,22 +121,22 @@ void SetPos(Player& player, Movement movementType) {
 
 		case UP:
 
-			player.position.x -= 1;
+			player.x -= 1;
 			break;
 
 		case DOWN:
 
-			player.position.x += 1;
+			player.x += 1;
 			break;
 
 		case LEFT:
 
-			player.position.y -= 1;
+			player.y -= 1;
 			break;
 
 		case RIGHT:
 
-			player.position.y += 1;
+			player.y += 1;
 			break;
 		}
 	}
@@ -127,74 +146,106 @@ void SetPos(Player& player, Movement movementType) {
 	}
 }
 
-bool ExistsCoin(Position& position) {
-
-	if (position.hasCoin) 
-	{
-		return true;
-	}
-	else {
-
-		return false;
-	}
-}
-
-void MovePlayer(Player& player, Movement movementType)
-{
-	if (CheckMovement(player, movementType))
-	{
-
+bool ExistsCoin(Player jugador, Position posicion[][NUM_COLUMNS], Movement movementType) {
+	
 		switch (movementType)
 		{
 
 		case UP:
-
-			player.position.x -= 1;
+			if (posicion[jugador.x - 1][jugador.y].hasCoin)
+				return true;
+			else
+				return false;
 			break;
 
 		case DOWN:
-
-			player.position.x += 1;
+			if (posicion[jugador.x + 1][jugador.y].hasCoin)
+				return true;
+			else
+				return false;
 			break;
-
 		case LEFT:
-
-			player.position.y -= 1;
+			if (posicion[jugador.x][jugador.y-1].hasCoin)
+				return true;
+			else
+				return false;
 			break;
 
 		case RIGHT:
-
-			player.position.y += 1;
+			if (posicion[jugador.x][jugador.y++].hasCoin)
+				return true;
+			else
+				return false;
 			break;
 		}
 	}
+
+
+Movement MovePlayer()
+{
+	char action;
+	std::cout << std::endl << std::endl << "input action(W, A, S, D): " << std::endl;
+	std::cin >> action;
+
+	switch (action)
+	{
+	case 'w':
+	case 'W':
+		return UP;
+		break;
+
+	case 's':
+	case'S':
+		return DOWN;
+		break;
+
+	case'a':
+	case'A':
+		return LEFT;
+		break;
+
+	case'd':
+	case'D':
+		return RIGHT;
+		break;
+	default:
+		std::cout << std::endl << "Invalid INPUT"<< std::endl;
+		break;
+	}
+	
 }
 
-bool GameOver(Board board[][NUM_COLUMNS]) 
-{
-	if (board[NUM_ROWS][NUM_COLUMNS].coin == 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
 
-void PrintBoard(Board position[][NUM_COLUMNS])
+bool GameOver(Position posicion[NUM_ROWS][NUM_COLUMNS])
 {
-	for (int i = 0; i<NUM_COLUMNS; i++)
+	for (int i = 0; i < NUM_COLUMNS; i++)
 	{
 		for (int j = 0; j < NUM_ROWS; j++)
 		{
-			if (position[i][j].position.hasCoin)
-				std::cout << 'C  ';
-			else if (position[i][j].position.hasStone)
-				std::cout << 'S  ';
-			else 
-				std::cout << '  ';
+			if (posicion[i][j].hasCoin)
+				return false;
+		}
+	}
+	return true;
+}
+
+void PrintBoard(Position posicion[][NUM_COLUMNS], Player jugador)
+{
+	for (int i = 0; i < NUM_ROWS; i++)
+	{
+		for (int j = 0; j < NUM_COLUMNS; j++)
+		{
+			if (posicion[i][j].hasCoin)
+				std::cout << "C ";
+			else if (posicion[i][j].hasStone)
+				std::cout << "S ";
+			else if (i == jugador.x && j == jugador.y)
+				std::cout << "P ";
+
+			else
+				std::cout << "0 ";
 		}
 		std::cout << std::endl;
 	}
+	//std::cout << std::endl << std::endl << "Your score is " + jugador.score;
 }
