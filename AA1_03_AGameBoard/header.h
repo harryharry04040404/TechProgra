@@ -3,68 +3,32 @@
 #define NUM_ROWS 5
 #define NUM_COLUMNS 5
 
-enum Movement {	UP, DOWN, LEFT, RIGHT};
+enum Movement { UP, DOWN, LEFT, RIGHT };
 
-struct Board {
-
-
-}; 
-
-Board board [NUM_ROWS] [NUM_COLUMNS];
-
-struct Player {
-
+struct Player
+{
 	int x;
 	int y;
 	int score;
 };
 
-int RandomBetween(int min, int max) {
 
-}
-
-void InitializeBoard() {
-
-	RandomBetween(0, 0.2 * NUM_ROWS*NUM_COLUMNS);
-
-	RandomBetween(0, 0.3 * NUM_ROWS * NUM_COLUMNS);
-
-	RandomBetween(0, NUM_ROWS * NUM_COLUMNS);
-
-	RandomBetween(0, NUM_ROWS * NUM_COLUMNS);
-}
-
-bool CheckMovement(int x, int y, Movement movementType) {
+struct Board
+{
+	bool hasCoin;
+	bool hasStone;
+};
 
 
-}
 
-void AddScore(Player player) {
+//Random
+int RandomBetween(int min, int max);
 
-
-}
-
-void SetPos() {
-
-
-}
-
-bool ExistsCoin() {
-
-
-}
-
-void MovePlayer() {
-
-
-}
-
-bool GameOver() {
-
-
-}
-
-void PrintBoard() {
-
-
-}
+void InitializeBoard(int& piedras, int& monedas, Player& jugador, Board posicion[][NUM_COLUMNS]);
+bool CheckMovement(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS]);
+void AddScore(Movement movementType, Player& player, Board position[][NUM_COLUMNS]);
+void SetPos(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS]);
+bool ExistsCoin(Player jugador, Board posicion[][NUM_COLUMNS], Movement movementType);
+Movement MovePlayer();
+bool GameOver(Board posicion[NUM_ROWS][NUM_COLUMNS]);
+void PrintBoard(Board posicion[][NUM_COLUMNS], Player jugador);
