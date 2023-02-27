@@ -1,7 +1,34 @@
 #include "header.h"
 #include <stdlib.h>
+#include <Windows.h>
 int main() {
-    srand(time(NULL));
+  //configuration 
+	const int FPS = 60;
+	int frameCount = 0;
+	bool userPressedKey = false;
+	//Gameloop
+	while (true)
+	{
+		//INPUT
+		if (GetAsyncKeyState(VK_UP))
+		{
+			userPressedKey = true;
+		}
+		if (userPressedKey)
+		{
+			system("CLS");
+			frameCount = 0;
+			userPressedKey = false;
+		}
+		//Render / draw
+		std::cout << frameCount;
+		++frameCount;
+		//FrameControl
+		Sleep(1000 / FPS);
+	}
+	
+
+	srand(time(NULL));
 	int piedras = 0;
 	int monedas = 0;
 	
