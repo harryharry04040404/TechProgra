@@ -10,7 +10,7 @@ int RandomBetween(int min, int max) {
 	return result;
 }
 
-void InitializeBoard(int& piedras, int& monedas, Player& jugador, Position posicion[][NUM_COLUMNS]) {
+void InitializeBoard(int& piedras, int& monedas, Player& jugador, Board posicion[][NUM_COLUMNS]) {
 
 	piedras = RandomBetween(0, (int)(0.2 * NUM_ROWS * NUM_COLUMNS));
 
@@ -47,7 +47,7 @@ void InitializeBoard(int& piedras, int& monedas, Player& jugador, Position posic
 		
 }
 
-bool CheckMovement(Player& player, Movement movementType, Position posicion[][NUM_COLUMNS])
+bool CheckMovement(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS])
 {
 	
 		switch (movementType) 
@@ -100,7 +100,7 @@ bool CheckMovement(Player& player, Movement movementType, Position posicion[][NU
 	}
 
 
-void AddScore(Movement movementType, Player& player, Position position[][NUM_COLUMNS])
+void AddScore(Movement movementType, Player& player, Board position[][NUM_COLUMNS])
 {
 
 	if (ExistsCoin(player, position, movementType))
@@ -110,7 +110,7 @@ void AddScore(Movement movementType, Player& player, Position position[][NUM_COL
 	}
 }
 
-void SetPos(Player& player, Movement movementType, Position posicion[][NUM_COLUMNS]) {
+void SetPos(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS]) {
 
 
 	if (CheckMovement(player, movementType, posicion)) 
@@ -146,36 +146,44 @@ void SetPos(Player& player, Movement movementType, Position posicion[][NUM_COLUM
 	}
 }
 
-bool ExistsCoin(Player jugador, Position posicion[][NUM_COLUMNS], Movement movementType) {
+bool ExistsCoin(Player jugador, Board posicion[][NUM_COLUMNS], Movement movementType) {
 	
 		switch (movementType)
 		{
 
 		case UP:
-			if (posicion[jugador.x - 1][jugador.y].hasCoin)
+			if (posicion[jugador.x - 1][jugador.y].hasCoin) {
 				return true;
-			else
+			}
+			else {
 				return false;
+			}
 			break;
 
 		case DOWN:
-			if (posicion[jugador.x + 1][jugador.y].hasCoin)
+			if (posicion[jugador.x + 1][jugador.y].hasCoin) {
 				return true;
-			else
+			}
+			else {
 				return false;
+			}
 			break;
 		case LEFT:
-			if (posicion[jugador.x][jugador.y-1].hasCoin)
+			if (posicion[jugador.x][jugador.y - 1].hasCoin) {
 				return true;
-			else
+			}
+			else {
 				return false;
+			}
 			break;
 
 		case RIGHT:
-			if (posicion[jugador.x][jugador.y++].hasCoin)
+			if (posicion[jugador.x][jugador.y++].hasCoin) {
 				return true;
-			else
+			}
+			else {
 				return false;
+			}
 			break;
 		}
 	}
@@ -216,7 +224,7 @@ Movement MovePlayer()
 }
 
 
-bool GameOver(Position posicion[NUM_ROWS][NUM_COLUMNS])
+bool GameOver(Board posicion[NUM_ROWS][NUM_COLUMNS])
 {
 	for (int i = 0; i < NUM_COLUMNS; i++)
 	{
@@ -229,7 +237,7 @@ bool GameOver(Position posicion[NUM_ROWS][NUM_COLUMNS])
 	return true;
 }
 
-void PrintBoard(Position posicion[][NUM_COLUMNS], Player jugador)
+void PrintBoard(Board posicion[][NUM_COLUMNS], Player jugador)
 {
 	for (int i = 0; i < NUM_ROWS; i++)
 	{
@@ -247,5 +255,9 @@ void PrintBoard(Position posicion[][NUM_COLUMNS], Player jugador)
 		}
 		std::cout << std::endl;
 	}
+
 	//std::cout << std::endl << std::endl << "Your score is " + jugador.score;
+
+
+
 }

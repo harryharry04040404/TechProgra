@@ -13,7 +13,7 @@ struct Player
 };
 	
 
-struct Position
+struct Board
 {
 	bool hasCoin;
 	bool hasStone;
@@ -24,11 +24,11 @@ struct Position
 //Random
 int RandomBetween(int min, int max);
 
-void InitializeBoard(int& piedras, int& monedas, Player& jugador, Position posicion[][NUM_COLUMNS]);
-bool CheckMovement(Player& player, Movement movementType, Position posicion[][NUM_COLUMNS]);
-void AddScore(Movement movementType, Player& player, Position position[][NUM_COLUMNS]);
-void SetPos(Player& player, Movement movementType, Position posicion[][NUM_COLUMNS]);
-bool ExistsCoin(Player jugador, Position posicion[][NUM_COLUMNS], Movement movementType);
+void InitializeBoard(int& piedras, int& monedas, Player& jugador, Board posicion[][NUM_COLUMNS]);
+bool CheckMovement(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS]);
+void AddScore(Movement movementType, Player& player, Board position[][NUM_COLUMNS]);
+void SetPos(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS]);
+bool ExistsCoin(Player jugador, Board posicion[][NUM_COLUMNS], Movement movementType);
 Movement MovePlayer();
-bool GameOver(Position posicion[NUM_ROWS][NUM_COLUMNS]);
-void PrintBoard(Position posicion[][NUM_COLUMNS], Player jugador);
+bool GameOver(Board posicion[NUM_ROWS][NUM_COLUMNS]);
+void PrintBoard(Board posicion[][NUM_COLUMNS], Player jugador);

@@ -6,25 +6,27 @@ int main() {
 	int monedas = 0;
 	
 	Player myPlayer;
-	Position posicion[NUM_ROWS][NUM_COLUMNS];
+	Board Board[NUM_ROWS][NUM_COLUMNS];
 	for (int i = 0; i < NUM_COLUMNS; i++)
 	{
 		for (int j = 0; j < NUM_ROWS; j++)
 		{
-			posicion[i][j].hasCoin = false;
-			posicion[i][j].hasStone = false;
+			Board[i][j].hasCoin = false;
+			Board[i][j].hasStone = false;
 
 		}
 	}
 
-	InitializeBoard(piedras,monedas, myPlayer,posicion);
+	InitializeBoard(piedras,monedas, myPlayer, Board);
 	
-	while (!GameOver(posicion)) 
+	while (!GameOver(Board))
 	{
-		PrintBoard(posicion,myPlayer);
+		PrintBoard(Board,myPlayer);
+		Movement move = MovePlayer();
+		SetPos(myPlayer, move, Board);
+		AddScore(move, myPlayer, Board);
 		MovePlayer();
-		ExistsCoin;
-		MovePlayer();
+		system("CLS");
 	}
 }
 		
