@@ -1,35 +1,19 @@
 #pragma once
 #include <iostream>
 #include <Windows.h>
-#define NUM_ROWS 10
-#define NUM_COLUMNS 10
-
-enum Movement { UP, DOWN, LEFT, RIGHT };
-
-struct Player
-{
-	int x;
-	int y;
-	int score;
-};
-
-
-struct Board
-{
-	bool hasCoin;
-	bool hasStone;
-};
-
-
+#include "Board.h"
+#include "Constants.h"
+#include "Player.h"
+#include "Types.h"
 
 //Random
 int RandomBetween(int min, int max);
 
-void InitializeBoard(int& piedras, int& monedas, Player& jugador, Board posicion[][NUM_COLUMNS]);
+
 bool CheckMovement(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS]);
 void AddScore(Movement movementType, Player& player, Board position[][NUM_COLUMNS]);
 void SetPos(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS]);
-bool ExistsCoin(Player jugador, Board posicion[][NUM_COLUMNS], Movement movementType);
+
 Movement MovePlayer();
 bool GameOver(Board posicion[NUM_ROWS][NUM_COLUMNS]);
 void PrintBoard(Board posicion[][NUM_COLUMNS], Player jugador);

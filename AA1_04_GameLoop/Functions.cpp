@@ -1,54 +1,13 @@
 #pragma once
-#include "header.h"
-
-int RandomBetween(int min, int max) {
-
-	int result;
-
-	result = rand() % (max - min + 1) + min;
-
-	return result;
-}
-
-void InitializeBoard(int& piedras, int& monedas, Player& jugador, Board posicion[][NUM_COLUMNS]) {
-
-	piedras = RandomBetween(0, (int)(0.2 * NUM_ROWS * NUM_COLUMNS));
-
-	monedas = RandomBetween(1, (int)(0.3 * NUM_ROWS * NUM_COLUMNS));
+#include "Functions.h"
 
 
-	for (int j = 0; j < piedras; j++)
-	{
-		int x = RandomBetween(0, NUM_ROWS - 1);
-		int y = RandomBetween(0, NUM_COLUMNS);
-
-		if (posicion[x][y].hasStone == true)
-			j--;
-		else
-			posicion[x][y].hasStone = true;
-	}
-
-	for (int j = 0; j < monedas; j++)
-	{
-		int x = RandomBetween(0, NUM_ROWS - 1);
-		int y = RandomBetween(0, NUM_COLUMNS);
-
-		if (posicion[x][y].hasCoin == true || posicion[x][y].hasStone == true)
-			j--;
-		else
-			posicion[x][y].hasCoin = true;
-	}
 
 
-	do {
-		jugador.x = RandomBetween(0, (NUM_ROWS - 1) * (NUM_COLUMNS - 1));
-		jugador.y = RandomBetween(0, (NUM_ROWS - 1) * (NUM_COLUMNS - 1));
-	} while (posicion[jugador.x][jugador.y].hasCoin || posicion[jugador.x][jugador.y].hasStone);
-
-}
 
 bool CheckMovement(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS])
 {
+	bool result = false;
 
 	switch (movementType)
 	{
@@ -56,47 +15,49 @@ bool CheckMovement(Player& player, Movement movementType, Board posicion[][NUM_C
 	case UP:
 		if (player.x != 0 || !posicion[player.x - 1][player.y].hasStone)
 		{
-			return true;
+			result = true;
 		}
 		else
 		{
-			return false;
+			result = false;
 		}
 		break;
 
 	case DOWN:
 		if (player.x != NUM_ROWS - 1 || !posicion[player.x + 1][player.y].hasStone)
 		{
-			return true;
+			result = true;
 		}
 		else
 		{
-			return false;
+			result = false;
 		}
 		break;
 
 	case LEFT:
 		if (player.y != 0 || !posicion[player.x][player.y - 1].hasStone)
 		{
-			return true;
+			result = true;
 		}
 		else
 		{
-			return false;
+			result = false;
 		}
 		break;
 
 	case RIGHT:
 		if (player.y != NUM_COLUMNS - 1 || !posicion[player.x][player.y + 1].hasStone)
 		{
-			return true;
+			result = true;
 		}
 		else
 		{
-			return false;
+			result = false;
 		}
 		break;
 	}
+
+	return result;
 }
 
 
@@ -146,47 +107,6 @@ void SetPos(Player& player, Movement movementType, Board posicion[][NUM_COLUMNS]
 	}
 }
 
-bool ExistsCoin(Player jugador, Board posicion[][NUM_COLUMNS], Movement movementType) {
-
-	switch (movementType)
-	{
-
-	case UP:
-		if (posicion[jugador.x - 1][jugador.y].hasCoin) {
-			return true;
-		}
-		else {
-			return false;
-		}
-		break;
-
-	case DOWN:
-		if (posicion[jugador.x + 1][jugador.y].hasCoin) {
-			return true;
-		}
-		else {
-			return false;
-		}
-		break;
-	case LEFT:
-		if (posicion[jugador.x][jugador.y - 1].hasCoin) {
-			return true;
-		}
-		else {
-			return false;
-		}
-		break;
-
-	case RIGHT:
-		if (posicion[jugador.x][jugador.y++].hasCoin) {
-			return true;
-		}
-		else {
-			return false;
-		}
-		break;
-	}
-}
 
 
 Movement MovePlayer()
