@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{cebcfda5-4de2-4b93-9d56-813fcf8fb130}</ProjectGuid>
-    <RootNamespace>AA103AGameBoard</RootNamespace>
+    <ProjectGuid>{8353bd43-082a-4a20-b3ff-6daf412a80b6}</ProjectGuid>
+    <RootNamespace>S4sort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>S4_sortTypes</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,7 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Funciones.cpp" />
+    <ClCompile Include="header.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

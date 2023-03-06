@@ -11,7 +11,7 @@ struct Player
 	int y;
 	int score;
 };
-
+	
 
 struct Board
 {
