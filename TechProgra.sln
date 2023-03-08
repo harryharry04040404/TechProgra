@@ -23,7 +23,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AA1_04_GameLoop", "AA1_04_G
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S6_EnumClass", "S6_EnumClass\S6_EnumClass.vcxproj", "{64F7BA84-C01E-4E95-8D32-D2D7DA06CB48}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S7_DynamicArray", "S7_heap\S7_heap.vcxproj", "{D1243727-BE26-47A0-8783-5BBD2E311272}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S7_DynamicArrayAndConst", "S7_heap\S7_heap.vcxproj", "{D1243727-BE26-47A0-8783-5BBD2E311272}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S8_defineVsConstAndCasting", "S8_defineVsConst\S8_defineVsConst.vcxproj", "{D9265991-D7C4-4349-A6BF-E2586F211B75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +123,14 @@ Global
 		{D1243727-BE26-47A0-8783-5BBD2E311272}.Release|x64.Build.0 = Release|x64
 		{D1243727-BE26-47A0-8783-5BBD2E311272}.Release|x86.ActiveCfg = Release|Win32
 		{D1243727-BE26-47A0-8783-5BBD2E311272}.Release|x86.Build.0 = Release|Win32
+		{D9265991-D7C4-4349-A6BF-E2586F211B75}.Debug|x64.ActiveCfg = Debug|x64
+		{D9265991-D7C4-4349-A6BF-E2586F211B75}.Debug|x64.Build.0 = Debug|x64
+		{D9265991-D7C4-4349-A6BF-E2586F211B75}.Debug|x86.ActiveCfg = Debug|Win32
+		{D9265991-D7C4-4349-A6BF-E2586F211B75}.Debug|x86.Build.0 = Debug|Win32
+		{D9265991-D7C4-4349-A6BF-E2586F211B75}.Release|x64.ActiveCfg = Release|x64
+		{D9265991-D7C4-4349-A6BF-E2586F211B75}.Release|x64.Build.0 = Release|x64
+		{D9265991-D7C4-4349-A6BF-E2586F211B75}.Release|x86.ActiveCfg = Release|Win32
+		{D9265991-D7C4-4349-A6BF-E2586F211B75}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
