@@ -27,7 +27,7 @@ int main()
 
 #endif // DEBUG_MODE
 }
-*/
+
 
 //Casting
 
@@ -70,3 +70,4 @@ int main()
 	Enemy fusion = e1 + e2;
 	bool moreHealth = e1 > e2;
 }
+*/
