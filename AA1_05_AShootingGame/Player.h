@@ -17,7 +17,9 @@ struct Player {
 
     int score;
 
-    int const numBalls = 20; //I think const and not define (Can be discussed tho)
+    int const maxBalls = 20; //I think const and not define (Can be discussed tho)
+
+    int numBalls = maxBalls;
 
     int* gun = new int [numBalls];
 

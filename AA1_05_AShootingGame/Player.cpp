@@ -4,7 +4,7 @@
 
 #include "Player.h"
 
-int RandBetween(int min, int max)
+int randBetween(int min, int max)
 {
 	int result = 0;
 	result = rand() % (max - min + 1) + min;
@@ -26,7 +26,7 @@ void Player::init(std::string name, int position){
 	{
 		int colorBall; 
 
-		colorBall = RandBetween(1, 5);
+		colorBall = randBetween(1, 5);
 		
 		switch (colorBall)
 		{
