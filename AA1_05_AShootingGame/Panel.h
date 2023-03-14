@@ -12,6 +12,8 @@ struct Panel{
      */
     Ball *panel;
     int size;
+    Panel(){
+    }
 
     /* b.
      * El método void init(): Inicializa al panel con un número aleatorio de bolas aleatorias que es leído

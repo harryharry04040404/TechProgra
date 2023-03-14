@@ -3,7 +3,6 @@
 //
 #include "Ball.h"
 #include <string>
-#include <iostream>
 
 // 2. Implementar un struct Player. La implementación debe incluir:
 struct Player {
@@ -11,15 +10,13 @@ struct Player {
      * Todos los miembros (atributos) necesarios para mantener la información de un jugador. Es especialmente
      * importante pensar en cómo se representa a la pistola.
      */
+    const int MAX_NUM_BALLS = 20;
+
     std::string name;
-
     int position;
-
     int score;
-
-    int const numBalls = 20; //I think const and not define (Can be discussed tho)
-
-    int* gun = new int [numBalls];
+    int remainingBalls = MAX_NUM_BALLS;
+    Ball* gun = new Ball[MAX_NUM_BALLS];
 
     /* b.
      * Un método void init(std::string name, int position), que inicializa al jugador poniéndole
@@ -33,4 +30,6 @@ struct Player {
      * función la devuelve.
      */
     Ball shoot();
+
+    void printMagazine();
 };

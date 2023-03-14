@@ -1,4 +1,4 @@
-#include <iostream>
+#include "Panel.h"
 
 #define LOOP_MODE
 
@@ -9,6 +9,7 @@ int main() {
      * cargador del jugador se vacía.
      */
     //TODO
+
 
     #endif
     return 0;

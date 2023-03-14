@@ -4,57 +4,47 @@
 
 #include "Player.h"
 
-int RandBetween(int min, int max)
-{
-	int result = 0;
-	result = rand() % (max - min + 1) + min;
-	return result;
-}
 
-//TODO
 void Player::init(std::string name, int position){
-	
-	std::cout << "input your name:" << std::endl;
 
-	std::cin >> name;
+    this -> name = name;
+    this -> position = position;
+    score = 0;
 
-	position = 0;
-
-	score = 0;
-
-	for (int i = 0; i < numBalls; i++)
-	{
-		int colorBall; 
-
-		colorBall = RandBetween(1, 5);
-		
-		switch (colorBall)
-		{
-		case 1:
-			gun[i] = RED;
-			break;
-		case 2:
-			gun[i] = GREEN;
-			break;
-		case 3:
-			gun[i] = BLUE;
-			break;
-		case 4:
-			gun[i] = YELLOW;
-			break;
-		case 5: 
-			gun[i] = ORANGE;
-			break;
-		default:
-			continue;
-		}
-	}
+    for (int i = 0; i < MAX_NUM_BALLS; i++)
+    {
+        int colorBall;
+        colorBall = randomNumber(1, 5);
+        switch (colorBall)
+        {
+            case 1:
+                gun[i] = Ball::GREEN;
+                break;
+            case 2:
+                gun[i] = Ball::RED;
+                break;
+            case 3:
+                gun[i] = Ball::BLUE;
+                break;
+            case 4:
+                gun[i] = Ball::YELLOW;
+                break;
+            case 5:
+                gun[i] = Ball::ORANGE;
+                break;
+            default:
+                continue;
+        }
+    }
 }
 
-//TODO
-Ball shoot()
-{
-
-
-	//return 
+Ball Player::shoot(){
+    Ball bolaLanzada = gun[0];
+    if (remainingBalls > 1){
+        for (int i = 0; i < remainingBalls-1; i++){
+            gun[i] = gun[i+1];
+        }
+    }
+    remainingBalls--;
+    return bolaLanzada;
 }
