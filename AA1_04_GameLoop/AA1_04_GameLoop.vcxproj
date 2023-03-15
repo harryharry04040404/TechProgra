@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{30097743-d5a0-48ff-ac32-02312742884b}</ProjectGuid>
+    <ProjectGuid>{8451343e-c640-4346-8b13-03a343b42a48}</ProjectGuid>
     <RootNamespace>AA104GameLoop</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -127,17 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="Functions.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Board.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Functions.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="Constants.h" />
-    <ClInclude Include="Functions.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Types.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Board.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Constants.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Functions.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Player.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

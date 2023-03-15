@@ -15,33 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Functions.cpp">
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Board.cpp">
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Functions.h">
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants.h">
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Types.h">
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Board.h">
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

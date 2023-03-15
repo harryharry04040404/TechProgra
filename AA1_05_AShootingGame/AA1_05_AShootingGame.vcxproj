@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{30097743-d5a0-48ff-ac32-02312742884b}</ProjectGuid>
-    <RootNamespace>AA104GameLoop</RootNamespace>
+    <ProjectGuid>{df429a49-1f41-42ca-b55b-412b4f23cbf5}</ProjectGuid>
+    <RootNamespace>AA105AShootingGame</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,17 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="Functions.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Ball.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\BasicMaths.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Panel.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="Constants.h" />
-    <ClInclude Include="Functions.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Ball.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\BasicMaths.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Panel.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
