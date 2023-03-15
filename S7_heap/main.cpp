@@ -3,7 +3,6 @@
 #define A 10  //but also could be 'A'
 #define B 4
 
-/*
 //Dynamic Arrays
 int* ResizeToDoubleCapacityArray(int* arrayResize, int capacity)
 {
@@ -69,7 +68,6 @@ int main()
 	delete[] newDoubledArray;  
 	newDoubledArray = nullptr;
 }
-*/
 
 //Const
 struct D

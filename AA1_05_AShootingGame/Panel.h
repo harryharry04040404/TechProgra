@@ -45,7 +45,7 @@ struct Panel{
     /* f.
      * El método void insertThree(): Inserta 3 bolas aleatorias en el panel por el final.
      */
-    void insertThree();
+    void insertThree(Ball ball);
 
     /* g.
      * Un método que imprima las bolas que hay en el panel.

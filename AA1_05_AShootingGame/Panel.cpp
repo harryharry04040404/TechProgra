@@ -3,6 +3,7 @@
 //
 
 #include "Panel.h"
+#include "Player.h"
 
 void Panel::init(){
 
@@ -87,8 +88,49 @@ void Panel::deleteThree(int position){
 }
 
 //TODO
-void Panel::insertThree(){
+void Panel::insertThree(Ball ball){
 
+    Ball* newPanel = new Ball[size + 3];
+    
+    int colorBall;
+
+    for (int i = 0; i < size + 3; i++)
+    {
+        Ball balltoInsert;
+
+        colorBall = randomNumber(1, 5);
+
+        newPanel[i] = panel[i];
+
+        if (i >= size)
+        {
+            switch (colorBall)
+            {
+            case 1:
+                balltoInsert = Ball::GREEN;
+                break;
+            case 2:
+                balltoInsert = Ball::RED;
+                break;
+            case 3:
+                balltoInsert = Ball::BLUE;
+                break;
+            case 4:
+                balltoInsert = Ball::YELLOW;
+                break;
+            case 5:
+                balltoInsert = Ball::ORANGE;
+                break;
+            default:
+                continue;
+            }
+
+            newPanel[i] = balltoInsert;
+        }       
+    }
+
+    delete[] panel;
+    panel = newPanel;
 }
 
 //TODO
