@@ -127,16 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Ball.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\BasicMaths.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\main.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Panel.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="BasicMaths.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Panel.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Ball.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\BasicMaths.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Panel.h" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="BasicMaths.h" />
+    <ClInclude Include="Panel.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

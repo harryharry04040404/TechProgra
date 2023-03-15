@@ -18,6 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Board.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Types.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,19 +139,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Board.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Functions.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\main.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\ProjectRebuilder\Player.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Board.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Constants.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Functions.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Player.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\ProjectRebuilder\Types.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
