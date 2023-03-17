@@ -15,33 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="..\AA1_05\Ball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="..\AA1_05\BasicMaths.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Panel.cpp">
+    <ClCompile Include="..\AA1_05\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ball.cpp">
+    <ClCompile Include="..\AA1_05\Panel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BasicMaths.cpp">
+    <ClCompile Include="..\AA1_05\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="..\AA1_05\Ball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ball.h">
+    <ClInclude Include="..\AA1_05\BasicMaths.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BasicMaths.h">
+    <ClInclude Include="..\AA1_05\Panel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Panel.h">
+    <ClInclude Include="..\AA1_05\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
