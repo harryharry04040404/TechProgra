@@ -20,6 +20,7 @@ void Panel::init(){
     panel = new Ball[size];
     for (int i = 0; i < size; i++){
         panel[i] = randomBall();
+
     }
 }
 
@@ -82,7 +83,7 @@ int Panel::verifier(int position, Ball ball){
 
 void Panel::deleteThree(int position){
     Ball *newPanel = new Ball[size-3];
-    for (int i = 0; i < size ; i++){
+    for (int i = 0; i < size-3; i++){
         if (i == position){
             if (i < size - 3){
                 newPanel[i] = panel[i+3];
@@ -90,18 +91,20 @@ void Panel::deleteThree(int position){
                 newPanel[i+2] = panel[i+5];
             }
             i += 2;
-        } else {
-            newPanel[i] = panel[i];
+        }
+        else {
+            newPanel[i] = panel[i+3];         
         }
     }
     delete[] panel;
-    panel = newPanel;
+    panel = nullptr;
     size -= 3;
+    panel = newPanel;
 }
 
 void Panel::insertThree(){
     changePanelSize(3);
-    for (int i = size-4; i < size; i++)
+    for (int i = 0; i < 3; i++)
     {
         insert(i, randomBall());
     }
@@ -118,6 +121,7 @@ void Panel::printPanelBalls(){
 void Panel::changePanelSize(int number){
 
     Ball *newPanel = new Ball[size+number];
+
     if (number > 0){
         for (int i = 0; i < size; i++){
             newPanel[i] = panel[i];
@@ -128,6 +132,7 @@ void Panel::changePanelSize(int number){
         }
     }
     delete[] panel;
+    panel = nullptr;
     panel = newPanel;
     size += number;
 }
