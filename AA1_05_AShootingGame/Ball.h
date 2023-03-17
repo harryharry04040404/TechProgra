@@ -13,3 +13,6 @@ enum Ball {
     SIZE
 };
 
+void printBall(Ball ball);
+Ball randomBall();
+

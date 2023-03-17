@@ -3,31 +3,29 @@
 //
 
 #include "Panel.h"
-#include "Player.h"
 
 void Panel::init(){
 
     // Cantidad de Bolas:
-    std::cout << "Introduce la cantidad de bolas que contendrá el panel:" << std::endl;
+    std::cout << "Introduce la cantidad de bolas que contendra el panel:" << std::endl;
     int number;
     std::cin >> number;
     while (number <= 0){
-        std::cout << "Introduce una cantidad adecuada (<0):" << std::endl;
+        std::cout << "Introduce una cantidad adecuada (mayor que 0):" << std::endl;
         std::cin >> number;
     }
     std::cout << "La cantidad introducida es adecuada." << std::endl;
-    size = randomNumber(1, number);
+    size = number;
 
-    // Ball *panel;
     panel = new Ball[size];
+    for (int i = 0; i < size; i++){
+        panel[i] = randomBall();
+    }
 }
 
 void Panel::insert(int position, Ball ball){
 
-    Ball *newPanel = new Ball[size+1];
-    std::copy(panel, panel + size++, newPanel);
-    delete[] panel;
-    panel = newPanel;
+    changePanelSize(1);
 
     for (int i = size-1; i > position; i--){
         panel[i] = panel[i-1];
@@ -36,9 +34,9 @@ void Panel::insert(int position, Ball ball){
 }
 
 int Panel::verifier(int position, Ball ball){
-    if (position >= 0 && position < sizeof(panel)-1){
+    if (position >= 0 && position < size-1){
         // Position == middle
-        if (position > 0 && position < sizeof(panel)-2){
+        if (position > 0 && position < size-2){
             if (panel[position] == ball &&
                 panel[position-1] == ball &&
                 panel[position+1] == ball)
@@ -53,7 +51,7 @@ int Panel::verifier(int position, Ball ball){
                     return position-2;
                 }
             }
-            if (position < sizeof(panel)-3){
+            if (position < size - 3){ //sizeof(panel)
                 if (panel[position+2] == ball &&
                     panel[position+1] == ball &&
                     panel[position] == ball)
@@ -70,7 +68,7 @@ int Panel::verifier(int position, Ball ball){
                 return position;
             }
         // Position == last
-        } else if (position == sizeof(panel)-1){
+        } else if (position == size - 1){ //sizeof(panel)
             if (panel[position-2] == ball &&
                 panel[position-1] == ball &&
                 panel[position] == ball)
@@ -82,58 +80,54 @@ int Panel::verifier(int position, Ball ball){
     return -1;
 }
 
-//TODO
 void Panel::deleteThree(int position){
-
-}
-
-//TODO
-void Panel::insertThree(Ball ball){
-
-    Ball* newPanel = new Ball[size + 3];
-    
-    int colorBall;
-
-    for (int i = 0; i < size + 3; i++)
-    {
-        Ball balltoInsert;
-
-        colorBall = randomNumber(1, 5);
-
-        newPanel[i] = panel[i];
-
-        if (i >= size)
-        {
-            switch (colorBall)
-            {
-            case 1:
-                balltoInsert = Ball::GREEN;
-                break;
-            case 2:
-                balltoInsert = Ball::RED;
-                break;
-            case 3:
-                balltoInsert = Ball::BLUE;
-                break;
-            case 4:
-                balltoInsert = Ball::YELLOW;
-                break;
-            case 5:
-                balltoInsert = Ball::ORANGE;
-                break;
-            default:
-                continue;
+    Ball *newPanel = new Ball[size-3];
+    for (int i = 0; i < size ; i++){
+        if (i == position){
+            if (i < size - 3){
+                newPanel[i] = panel[i+3];
+                newPanel[i+1] = panel[i+4];
+                newPanel[i+2] = panel[i+5];
             }
-
-            newPanel[i] = balltoInsert;
-        }       
+            i += 2;
+        } else {
+            newPanel[i] = panel[i];
+        }
     }
-
     delete[] panel;
     panel = newPanel;
+    size -= 3;
 }
 
-//TODO
-void Panel::printBalls(){
+void Panel::insertThree(){
+    changePanelSize(3);
+    for (int i = size-4; i < size; i++)
+    {
+        insert(i, randomBall());
+    }
+}
 
+void Panel::printPanelBalls(){
+    std::cout << "Bolas en el panel:" << std::endl;
+    for (int i = 0; i < size; i++){
+        printBall(panel[i]);
+    }
+    std::cout << std::endl;
+}
+
+void Panel::changePanelSize(int number){
+
+    Ball *newPanel = new Ball[size+number];
+    if (number > 0){
+        for (int i = 0; i < size; i++){
+            newPanel[i] = panel[i];
+        }
+    } else {
+        for (int i = 0; i < size+number; i++){
+            newPanel[i] = panel[i];
+        }
+    }
+    delete[] panel;
+    panel = newPanel;
+    size += number;
 }

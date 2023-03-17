@@ -13,28 +13,7 @@ void Player::init(std::string name, int position){
 
     for (int i = 0; i < MAX_NUM_BALLS; i++)
     {
-        int colorBall;
-        colorBall = randomNumber(1, 5);
-        switch (colorBall)
-        {
-            case 1:
-                gun[i] = Ball::GREEN;
-                break;
-            case 2:
-                gun[i] = Ball::RED;
-                break;
-            case 3:
-                gun[i] = Ball::BLUE;
-                break;
-            case 4:
-                gun[i] = Ball::YELLOW;
-                break;
-            case 5:
-                gun[i] = Ball::ORANGE;
-                break;
-            default:
-                continue;
-        }
+        gun[i] = randomBall();
     }
 }
 
@@ -47,4 +26,29 @@ Ball Player::shoot(){
     }
     remainingBalls--;
     return bolaLanzada;
+}
+
+void Player::printStats(){
+    std::cout << "Nombre: " << name
+    << std::endl << "Score: " << score
+    << std::endl;
+}
+
+void Player::printGun() {
+    std::cout << "Bolas del jugador:" << std::endl;
+    for (int i = 0; i < remainingBalls; i++) {
+        printBall(gun[i]);
+    }
+    std::cout << std::endl;
+}
+
+int askPosition(int max){
+    int num;
+    std::cout << "Donde lanzas la bola? (max: " << max << ")" << std::endl;
+    std::cin >> num;
+    while (num < 0 || num > max){
+        std::cout << "Introduce un valor adecuado.\nDonde lanzas la bola? (max: " << max << ")" << std::endl;
+        std::cin >> num;
+    }
+    return num;
 }

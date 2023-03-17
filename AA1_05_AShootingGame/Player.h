@@ -1,7 +1,7 @@
 //
 // Created by JordiPlanas & JaumeLatorre on 08/03/2023.
 //
-#include "Ball.h"
+#include "Panel.h"
 #include <string>
 
 // 2. Implementar un struct Player. La implementación debe incluir:
@@ -31,5 +31,8 @@ struct Player {
      */
     Ball shoot();
 
-    void printMagazine();
+    void printStats();
+    void printGun();
 };
+
+int askPosition(int max);
