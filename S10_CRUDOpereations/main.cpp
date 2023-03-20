@@ -22,6 +22,8 @@ int main()
 
 	//S2
 
+	//Iterator ranged for
+
 	std::vector<int> myVector1;
 
 	for (int i = 1; i <= 10; i++)
