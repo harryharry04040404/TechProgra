@@ -3,4 +3,5 @@
 //
 #include <iostream>
 #include <stdlib.h>
+#include <vector>
 int randomNumber(int min, int max);

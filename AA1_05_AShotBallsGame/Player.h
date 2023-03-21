@@ -4,6 +4,7 @@
 #include "Panel.h"
 #include <string>
 
+
 struct Player {
     const int MAX_NUM_BALLS = 20;
 
@@ -11,7 +12,10 @@ struct Player {
     int position;
     int score;
     int remainingBalls = MAX_NUM_BALLS;
-    Ball* gun = new Ball[MAX_NUM_BALLS];
+    Ball randBall = randomBall();
+
+    std::vector<Ball> gun (remainingBalls, randBall);
+    //ball* gun = new ball[max_num_balls];
 
     void init(std::string name, int position);
     Ball shoot();

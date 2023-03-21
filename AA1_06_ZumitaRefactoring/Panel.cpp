@@ -29,19 +29,11 @@ void Panel::init(){
 
 void Panel::insert(int position, Ball ball){
 
-    changePanelSize(1);
-    Ball *newPanel = new Ball[size];
-
-    for (int i = 0; i < position; i++){
-        newPanel[i] = panel[i];
-    }
-    newPanel[position] = ball;
-    for (int i = position+1; i < size; i++){
-        newPanel[i] = panel[i-1];
-    }
-    delete[] panel;
-    panel = newPanel;
-    panel[position] = ball;
+    std::vector <int>::iterator it;
+    
+    it  position;
+    
+    panel.insert();
 }
 
 int Panel::verifier(int position, Ball ball){
@@ -114,7 +106,7 @@ void Panel::insertThree(){
         if (verifier(size, randomBallSaved) != -1){
             i--;
         } else {
-            insert(size, randomBallSaved);
+            panel.insert(size, randomBallSaved);
         }
 
     }
