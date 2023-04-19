@@ -1,7 +1,5 @@
 #include "Queue.h"
 #include <iostream>
-
-#pragma once
 class Queue
 {
 private:
@@ -23,6 +21,7 @@ public:
 		m_last = nullptr;
 		m_size = 0;
 	}
+
 	void Push(int value)
 	{
 		//Create Node
@@ -58,7 +57,7 @@ public:
 		delete nodeToRemove;
 
 		return valueRemoved;
-	}
+	}	
 
 	int Front()
 	{
