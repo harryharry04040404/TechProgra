@@ -1,20 +1,7 @@
 #include "Player.h"
-#include "Card.h"
 
 class Player
 {
-private:
-	struct Node
-	{
-		int value;
-		Node* next;
-	};
-
-	Node* m_first;
-	Node* m_last;
-	size_t m_size;
-	
-public:
 	int m_playerId;
 
 	std::queue<Card> m_hand;

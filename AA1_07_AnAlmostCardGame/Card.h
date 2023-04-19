@@ -7,6 +7,7 @@ enum Suit
 	CLUBS
 };
 
+
 class Card
 {
 	Suit m_suit;

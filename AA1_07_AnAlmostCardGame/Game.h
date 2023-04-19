@@ -2,6 +2,7 @@
 #include "Player.h"
 class Game
 {
+private:
 	std::queue <Player> m_players;
 
 	int m_numPlayers;
@@ -10,8 +11,9 @@ class Game
 
 	int m_remainingCards;
 
-	std::queue<Card> m_discarted;
+	std::stack<Card> m_discarted;
 
+public:
 	Game();
 
 	Card GetNewCard();

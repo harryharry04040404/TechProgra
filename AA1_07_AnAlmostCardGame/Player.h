@@ -2,6 +2,7 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <stack>
 #include "Card.h"
 
 class Player
