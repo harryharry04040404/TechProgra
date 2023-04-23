@@ -1,4 +1,4 @@
-#include "Player.h"
+/*#include "Player.h"
 
 class Player
 {
@@ -54,3 +54,4 @@ Card randomCard(int num, std::queue<Card> cards)
 
 	cards.pop();
 }
+*/

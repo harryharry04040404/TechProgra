@@ -1,4 +1,10 @@
-#include "Card.h"
+enum Suit
+{
+	SPADES,
+	COINS,
+	CUPS,
+	CLUBS
+};
 
 class Card
 {
@@ -29,3 +35,9 @@ class Card
 		return equal;
 	}
 };
+
+//NO es corrector pero sino no compila y es peor
+int main()
+{
+
+}

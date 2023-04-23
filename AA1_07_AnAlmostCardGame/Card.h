@@ -1,11 +1,5 @@
-#pragma once
-enum Suit
-{
-	SPADES,
-	COINS,
-	CUPS,
-	CLUBS
-};
+/*#pragma once
+
 
 
 class Card
@@ -18,4 +12,4 @@ class Card
 
 	bool OperatorEqual(Card card1, Card card2);
 };
-
+*/
